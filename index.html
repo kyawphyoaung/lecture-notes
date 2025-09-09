@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture Notes by Kyaw Phyo Aung</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient-animation 15s ease infinite;
+        color: #333;
+        min-height: 100vh;
+      }
+
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1.25rem;
+      }
+
+      .lecture-day {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .lecture-day:hover {
+        transform: translateY(-0.25rem);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      }
+
+      .lecture-content {
+        display: none;
+        overflow: hidden;
+        animation: slideDown 0.5s ease-in-out;
+      }
+
+      .lecture-content.open {
+        display: block;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-0.5rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <header
+      class="bg-white/80 backdrop-blur-lg shadow-lg py-12 px-5 text-center rounded-b-3xl"
+    >
+      <div class="container">
+        <h1 class="text-4xl font-extrabold text-gray-900">Lecture Notes</h1>
+        <p class="mt-2 text-lg text-gray-600">Teacher: Kyaw Phyo Aung</p>
+        <a
+          href="https://github.com/kyawphyoaung/SMK_Teacher_Training"
+          target="_blank"
+          class="inline-block mt-4 bg-gray-800 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-gray-900 transition-colors"
+        >
+          View on GitHub
+        </a>
+        <p class="mt-4 text-sm font-light italic">
+          Your one-stop destination for all course materials.
+        </p>
+      </div>
+    </header>
+
+    <main class="container py-8">
+      <div
+        class="flex flex-col md:flex-row items-center justify-between mb-8 space-y-4 md:space-y-0"
+      >
+        <div
+          class="w-full md:w-1/2 flex items-center bg-white rounded-full shadow-md overflow-hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-gray-400 ml-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by title or content..."
+            class="flex-grow p-3 focus:outline-none placeholder-gray-400"
+          />
+        </div>
+        <div
+          class="w-full md:w-1/2 md:flex-grow md:ml-4 flex items-center bg-white rounded-full shadow-md overflow-hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-gray-400 ml-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h.01M3 15h2m13-2h2m-6 4h.01M3 11h2m-6 4h.01M3 11h2m13-4h2M12 21a9 9 0 110-18 9 9 0 010 18z"
+            />
+          </svg>
+          <input
+            type="date"
+            id="dateInput"
+            class="flex-grow p-3 text-gray-700 focus:outline-none"
+          />
+          <button
+            id="clearDateBtn"
+            class="hidden bg-gray-200 text-gray-700 font-semibold px-4 py-3 rounded-full hover:bg-gray-300 transition-colors"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+
+      <div class="grid gap-6">
+        <!-- Add more lecture cards here following the same structure -->
+        <div
+          class="lecture-day bg-white/90 p-8 rounded-2xl shadow-lg"
+          id="2025-09-9"
+        >
+          <div
+            class="flex items-center justify-between cursor-pointer lecture-header"
+          >
+            <h2 class="text-xl font-semibold text-gray-900">
+              September 9, 2025: Git and Github
+            </h2>
+            <button
+              class="expand-btn bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-600 transform hover:scale-105 transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 inline-block"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="lecture-content mt-6 space-y-4">
+            <div class="notes text-gray-700">
+              <h3 class="text-lg font-medium text-gray-800">Notes</h3>
+              <p>
+                The fundamentals of Git and GitHub. The session covered the
+                basic installation of Git, followed by a hands-on demonstration
+                of creating a repository and pushing changes. The lecture
+                provided a practical introduction to version control.
+              </p>
+            </div>
+            <div class="code-block text-gray-700">
+              <h3 class="text-lg font-medium text-gray-800">
+                Command Lines & Code
+              </h3>
+              <pre
+                class="bg-gray-100 p-4 rounded-xl border border-gray-200 overflow-x-auto text-sm font-mono text-gray-800"
+              ><code>
+/* Basic command lines for */
+- git init 
+- git status
+- git add main.py
+- git status
+- git commit -m “first commit”  
+- git remote add origin https://
+- git push -u origin master
+- git config --global user.name “Your name” 
+- git config --global user.email “yourname@gmail.com”
+- git config --global credential.helper store
+                        </code></pre>
+            </div>
+            <div class="video-section text-gray-700">
+              <h3 class="text-lg font-medium text-gray-800">
+                Lecture Recording
+              </h3>
+              <div
+                class="relative w-full aspect-video rounded-xl overflow-hidden shadow-md"
+              >
+                <iframe
+                  id="video-2025-09-09"
+                  class="absolute inset-0 w-full h-full"
+                  src="https://jcu.zoom.us/rec/play/9WTCL1KMjZG0RLv-wHZY_ooFnaXuwD_iVI4m_gtTcPZOdGSucDuL6VGWnGUPf1do3kcwJS8VF3aH10NS.PiPZ_32_LTEEYmGC?autoplay=true
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p
+                id="expiration-2025-09-09"
+                class="mt-2 text-sm italic text-red-500"
+              ></p>
+              <a
+                id="download-2025-09-09"
+                href="#"
+                download
+                class="inline-block mt-4 text-sm bg-purple-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-purple-600 transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 inline-block mr-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  />
+                </svg>
+                Download Recording
+              </a>
+            </div>
+            <div class="flex justify-end mt-4">
+              <a
+                href="https://t.me/kpaharry"
+                target="_blank"
+                class="bg-cyan-600 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:bg-cyan-700 transition-colors flex items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.32 3.68a.75.75 0 00-1.06-.01L10 8.94 4.74 3.67a.75.75 0 00-1.06 1.06L8.94 10l-5.27 5.26a.75.75 0 001.06 1.06L10 11.06l5.26 5.27a.75.75 0 001.06-1.06L11.06 10l5.27-5.26a.75.75 0 00.01-1.06z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 2a8 8 0 100 16 8 8 0 000-16zM1 10a9 9 0 1118 0 9 9 0 01-18 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Ask Questions on Telegram
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lecture Card 2 -->
+        <div
+          class="lecture-day bg-white/90 p-8 rounded-2xl shadow-lg"
+          id="2025-09-02"
+        >
+          <div
+            class="flex items-center justify-between cursor-pointer lecture-header"
+          >
+            <h2 class="text-xl font-semibold text-gray-900">
+              September 2, 2025: Data Structure multidimensional array
+            </h2>
+            <button
+              class="expand-btn bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-600 transform hover:scale-105 transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 inline-block"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="lecture-content mt-6 space-y-4">
+            <div class="notes text-gray-700">
+              <h3 class="text-lg font-medium text-gray-800">Notes</h3>
+              <p>
+               
+              </p>
+            </div>
+            <div class="code-block text-gray-700">
+              <h3 class="text-lg font-medium text-gray-800">
+                Command Lines & Code
+              </h3>
+              <pre
+                class="bg-gray-100 p-4 rounded-xl border border-gray-200 overflow-x-auto text-sm font-mono text-gray-800"
+              ><code>
+# Activity18.py
+game_data = [
+    ["Alexis",1,19],
+    ["Seema",1,29],
+    ["Seema",2,44],
+    ["Lois",1,10],
+    ["Alexis",2,17],
+    ["Alexis",3,36],
+    ["Dion",1,23],
+    ["Emma",1,27],
+    ["Emma",2,48]
+]
+
+def get_highest_player(level, game_data):
+    max_score = 0
+    for player in game_data:
+        if player[1] == level:
+            if player[2] > max_score:
+                max_score=player[2]
+                highest_player = player
+    return highest_player
+
+
+lvl1_higest_player = get_highest_player(1,game_data)
+lvl2_higest_player = get_highest_player(2,game_data)
+lvl3_highest_player = get_highest_player(3,game_data)
+
+print(lvl1_higest_player)
+print(lvl2_higest_player)
+print(lvl3_highest_player)
+                        </code></pre>
+            </div>
+            <div class="video-section text-gray-700">
+              <h3 class="text-lg font-medium text-gray-800">
+                Lecture Recording
+              </h3>
+              <div
+                class="relative w-full aspect-video rounded-xl overflow-hidden shadow-md"
+              >
+                <iframe
+                  id="video-2025-09-09"
+                  class="absolute inset-0 w-full h-full"
+                  src="https://jcu.zoom.us/rec/play/zQ8-ojy95k9sOQXa_NdHJTnlwBHuOUiPjpO9BZR6Kj05-9mriMD7eMfCECW2oZuvA604VRBce-alqv2y.qO9_DfCh63lQiT41?autoplay=true
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p
+                id="expiration-2025-09-09"
+                class="mt-2 text-sm italic text-red-500"
+              ></p>
+              <a
+                id="download-2025-09-09"
+                href="#"
+                download
+                class="inline-block mt-4 text-sm bg-purple-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-purple-600 transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 inline-block mr-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  />
+                </svg>
+                Download Recording
+              </a>
+            </div>
+            <div class="flex justify-end mt-4">
+              <a
+                href="https://t.me/kpaharry"
+                target="_blank"
+                class="bg-cyan-600 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:bg-cyan-700 transition-colors flex items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16.32 3.68a.75.75 0 00-1.06-.01L10 8.94 4.74 3.67a.75.75 0 00-1.06 1.06L8.94 10l-5.27 5.26a.75.75 0 001.06 1.06L10 11.06l5.26 5.27a.75.75 0 001.06-1.06L11.06 10l5.27-5.26a.75.75 0 00.01-1.06z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 2a8 8 0 100 16 8 8 0 000-16zM1 10a9 9 0 1118 0 9 9 0 01-18 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Ask Questions on Telegram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const lectureDays = document.querySelectorAll(".lecture-day");
+        const searchInput = document.getElementById("searchInput");
+        const dateInput = document.getElementById("dateInput");
+        const clearDateBtn = document.getElementById("clearDateBtn");
+
+        // Toggle lecture content and rotate the button icon
+        lectureDays.forEach((day) => {
+          const header = day.querySelector(".lecture-header");
+          const content = day.querySelector(".lecture-content");
+          const expandBtn = day.querySelector(".expand-btn");
+          const expandIcon = expandBtn.querySelector("svg");
+
+          header.addEventListener("click", () => {
+            content.classList.toggle("open");
+            expandIcon.classList.toggle("rotate-45");
+            if (content.classList.contains("open")) {
+              expandIcon.innerHTML = `<path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />`;
+            } else {
+              expandIcon.innerHTML = `<path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />`;
+            }
+          });
+        });
+
+        // Video expiration date calculation and display
+        function calculateExpiration() {
+          const videoIframe = document.getElementById("video-2025-09-09");
+          if (videoIframe) {
+            const urlParams = new URLSearchParams(
+              videoIframe.src.split("?")[1]
+            );
+            const startTime = parseInt(urlParams.get("startTime"));
+
+            if (!isNaN(startTime)) {
+              const days = 500;
+              const expirationTime = new Date(
+                startTime + days * 24 * 60 * 60 * 1000
+              );
+              const formattedDate = expirationTime.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              });
+              const expirationElement = document.getElementById(
+                "expiration-2025-09-09"
+              );
+              if (expirationElement) {
+                expirationElement.textContent = `Video expires on: ${formattedDate}`;
+              }
+            }
+          }
+        }
+        calculateExpiration();
+
+        // Search functionality
+        searchInput.addEventListener("input", () => {
+          const searchTerm = searchInput.value.toLowerCase();
+          lectureDays.forEach((day) => {
+            const textContent = day.textContent.toLowerCase();
+            if (textContent.includes(searchTerm)) {
+              day.style.display = "block";
+            } else {
+              day.style.display = "none";
+            }
+          });
+        });
+
+        // Date picker functionality
+        dateInput.addEventListener("change", () => {
+          const selectedDate = dateInput.value;
+          if (selectedDate) {
+            clearDateBtn.classList.remove("hidden");
+            lectureDays.forEach((day) => {
+              if (day.id === selectedDate) {
+                day.style.display = "block";
+              } else {
+                day.style.display = "none";
+              }
+            });
+          } else {
+            clearDateBtn.classList.add("hidden");
+            lectureDays.forEach((day) => {
+              day.style.display = "block";
+            });
+          }
+        });
+
+        clearDateBtn.addEventListener("click", () => {
+          dateInput.value = "";
+          clearDateBtn.classList.add("hidden");
+          lectureDays.forEach((day) => {
+            day.style.display = "block";
+          });
+        });
+
+        // Download button functionality (Note: This may not work on all browsers due to security restrictions)
+        const downloadBtn = document.getElementById("download-2025-09-09");
+        if (downloadBtn) {
+          const videoSrc = document.getElementById("video-2025-09-09").src;
+          downloadBtn.href = videoSrc;
+        }
+      });
+    </script>
+  </body>
+</html>
