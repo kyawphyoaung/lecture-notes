@@ -164,6 +164,37 @@
       document.addEventListener("DOMContentLoaded", () => {
         // Your lecture data. To add a new lesson, just add a new object to this array.
         const lectureData = [
+        {
+            id: "2025-09-16",
+            title: "16 Sept 2025: Validation",
+            notes: `Various data validation methods in programming to ensure data integrity and quality. The topics covered include Range Validation, which checks if data is within specific numerical bounds; Look-up Validation, which verifies data against a predefined set of values; and Exception Handling using try-except blocks to manage runtime errors and invalid data inputs.`,
+            code: `/* Postcode validation code */
+arrayForms = ['7AXB','7PDB','7ARL','7JEH']
+form = input("Please enter the form")
+valid = False
+index = 0
+length = len(arrayForms)
+
+# Old method
+# while valid == False and index < length:
+#     if form == arrayForms[index]:
+#         valid = True
+#     index += 1
+
+# if valid == True:
+#     print("Valid form")
+# else:
+#     print("The form you entered does not exist")
+
+# New method
+if form in arrayForms:
+    print("Valid Form")
+else:
+    print("The form you entered does not exist")`,
+            videoUrl:
+              "https://jcu.zoom.us/rec/play/wgyzARznuNs7ok4uxRbazZzFAavP7mmMtq1KlOghcZGngefCI8St-7iIfPHJ0nAtvyzuLLSclW83WT4-.yPAcdUb2XvZJMoKG?pwd=DHw8LAjWKnaVJOYQuQAAIAAAAGCgNCVUhRf-6C4H5PYZouOR5AY1mk4aCY2Y2rJsva2pzBThGvNcv6zroJvKWw07uzAwMDAwNA",
+            telegramUrl: "https://t.me/kpaharry",
+          },
           {
             id: "2025-09-09",
             title: "9 Sept 2025: Git and Github",
