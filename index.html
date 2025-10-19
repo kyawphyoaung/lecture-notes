@@ -164,6 +164,76 @@
       document.addEventListener("DOMContentLoaded", () => {
         // Your lecture data. To add a new lesson, just add a new object to this array.
         const lectureData = [
+          {
+            id: "2025-10-14",
+            title: "14 Oct 2025: Subprograms (Functions and Procedures)",
+            notes: `The session focused on <b>SUBPROGRAMS</b> specifically covering the concept of <b>functions</b> across multiple languages (Java, Python, C#) with practical coding examples. Key topics included the distinction between <b>Local Variables</b> and <b>Global Variables</b> concerning their scope and accessibility. The difference between <b>Functions</b> (which return a value) and <b>Procedures</b> (which do not return a value) was also clearly defined and discussed.`,
+            code: `
+import random
+
+myName = "KPA" #global variable
+
+def dice():
+    simDice = random.randint(1,7)
+    print(myName+"is rolling the dice")
+    return simDice
+
+def sayMyName():
+    # myName = "KPA" #local variable
+    print("Hello my name is"+myName)
+
+number = dice()
+print(number)
+sayMyName()
+print("My name is"+myName)
+
+`,
+            videoUrl:
+              "https://jcu.zoom.us/rec/play/3yvcafuSTnqKh0gXj3SG2q-YWzDLsmDuhGD6GfXNfRWK4UCcD-xzABqYEAWTtMozGiP_1ylCQ0EJRQpV.rEPNRt8YpDxJyLR-?pwd=DBvjnl0uVMPXB_cwagAAIAAAAEjiud3RxIZM82gIMZw5h1vJETP2yub2FZSLQX7RhkdS6ppW-mhjVzrr18DY5OVbOjAwMDAwNA",
+            telegramUrl: "https://t.me/kpaharry",
+          },
+          {
+            id: "2025-09-30",
+            title: "30 Sept 2025: File I/O with 2D Arrays and CSV",
+            notes: `The focus of this session was hands-on practice with data persistence, specifically tackling <b>Activity 24</b> from the textbook, which involved writing a <b>2-dimensional array</b> to a file and subsequently reading the data back. A key concept introduced was the practical advantage of using the <b>CSV (Comma Separated Values) format</b> over raw 2D array storage for simpler data handling, with example code provided to demonstrate the ease of reading and writing data in the CSV structure.`,
+            code: `
+highest_scores = [900,1000,1500,2000,2500]
+
+with open('scores.txt','w') as file:
+    for score in highest_scores:
+        file.write(str(score)+ '');
+    print("File Write Success")
+
+with open('scores.txt','a') as file:
+    file.write(str(3000)+'')
+
+print("File Reading...")
+with open('scores.txt','r') as file:
+    print("The five highest scores")
+    for line in file.readlines():
+        print(line)
+`,
+            videoUrl:
+              "https://jcu.zoom.us/rec/play/JGqzQcHekkg4gqiZ5X9-njndfPuEZWnGo1Bu4Ng3GaBnL0S5V0q-P1F00O_g6tvL6NpX0BGdFOloA8Ds.mwcB7cQejkgWt033?pwd=DInSM98VDmCv3IexRwAAIAAAADSx3up1ai171tX3H9pfMyiEpUUEay_PCZH-kJzJikb9bAL2A7HrVp-qLWm9ZxsORTAwMDAwNA",
+            telegramUrl: "https://t.me/kpaharry",
+          },
+          {
+            id: "2025-09-23",
+            title: "23 Sept 2025: File Input/Output (I/O) Systems",
+            notes: `This session covered the technical aspects of File Read and Write operations in Python and Java. The core process—Open, Read/Write, Close—was examined. In Python, we explored the use of the built-in open() function with different file modes (e.g., 'r', 'w', 'a') and emphasized the best practice of using the with open(...) statement for automatic resource management.`,
+            code: `# File Read
+with open('smk.txt','r') as myFile:
+    student_list = myFile.read()
+    print(student_list)
+
+# File Write
+with open('smk.txt','w') as myFile:
+    myFile.write('Student 1')
+    myFile.write('Student 2')`,
+            videoUrl:
+              "https://jcu.zoom.us/rec/play/_O1akpVmbWS_vOz9xjfNhTKXXAy4QGxLTXf6M1aSCEHeOCCyVjB5NDqr5rVGDujNnZPgVIsc0FBvJMtK.M5tzi0ChTlYwlHco?pwd=DD09wJoaxQdGqPnWIgAAIAAAAOLCxOIVT2JTSWazCmlU0BI8bUEjcB04zV_nE1usVVKPlH2crbWW--ZyU_fqLgGZqjAwMDAwNA",
+            telegramUrl: "https://t.me/kpaharry",
+          },
         {
             id: "2025-09-16",
             title: "16 Sept 2025: Validation",
