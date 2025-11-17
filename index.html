@@ -165,6 +165,33 @@
         // Your lecture data. To add a new lesson, just add a new object to this array.
         const lectureData = [
           {
+          id: "2025-11-12",
+            title: "12 Nov 2025: Testing and Evaluation- Runtime Error & IDE",
+            notes: ``,
+            code: ``,
+            videoUrl:
+              "https://jcu.zoom.us/rec/play/XQIr3lNc2fMIigO6892SSt9gshqtTIJDCHrcYEmlVoP_cvy39S2e3c0tr-2bTdSychsPsImIl-YukgY8.T--KTeaZQTTbkP04?pwd=DK2Ro9_-HR4AXXPnOgAAIAAAAGsdm0IfA0XRp7sBFYV4oqdvSPKG6M7E98mzOZNzBG25kODQWKeBFb5bJoTdcbJGPzAwMDAwNA",
+            telegramUrl: "https://t.me/kpaharry",
+          },
+          {
+          id: "2025-11-5",
+            title: "5 Nov 2025: Testing and Evaluation - Logic Error",
+            notes: ``,
+            code: ``,
+            videoUrl:
+              "https://jcu.zoom.us/rec/play/5JPmx1F1R8n6Qmbn4yxvN8eFBV0yIr0D3pUaRWzx-6Mgh3zfzaKo5GuU8chAFw9hg4SxNsLJpOB6eLna.uhYVTWfnm5J-Gptx?pwd=DCVKljIgHIX0z6PXuQAAIAAAAGLOCbC1DM6GdCAB06uAjmUkXnSqQoOMHCqIvA8JPrCmRRfPO50M5vhPFh_WUv8vOTAwMDAwNA",
+            telegramUrl: "https://t.me/kpaharry",
+          },
+          {
+          id: "2025-10-28",
+            title: "28 Oct 2025 Subprograms Menu Driven Program ",
+            notes: ``,
+            code: ``,
+            videoUrl:
+              "https://jcu.zoom.us/rec/play/pzx0MvexuYlnWvI2cVtSXZiZKkQr34CcFmcWh4RmvnyiyF-EzmaWObxV8UpsGhxI05Fj2LXiIhdyUJnN.DsAiPhZwr2-Nj7nI?pwd=DPOHuYE8DePu-n2mvQAAIAAAAAqcpZJUJF_0_JJQpDr-3bBk0qHkuQ_au_ZiTFJ3-ScB8Ql-4ifMz3EzlA2m9uXx0DAwMDAwNA",
+            telegramUrl: "https://t.me/kpaharry",
+          },
+          {
             id: "2025-10-14",
             title: "14 Oct 2025: Subprograms (Functions and Procedures)",
             notes: `The session focused on <b>SUBPROGRAMS</b> specifically covering the concept of <b>functions</b> across multiple languages (Java, Python, C#) with practical coding examples. Key topics included the distinction between <b>Local Variables</b> and <b>Global Variables</b> concerning their scope and accessibility. The difference between <b>Functions</b> (which return a value) and <b>Procedures</b> (which do not return a value) was also clearly defined and discussed.`,
@@ -346,14 +373,22 @@ print(lvl3_highest_player)
                   </button>
                 </div>
                 <div class="lecture-content mt-6 space-y-4">
-                  <div class="notes text-gray-700">
-                    <h3 class="text-lg font-medium text-gray-800">Notes</h3>
-                    <p>${lecture.notes}</p>
-                  </div>
-                  <div class="code-block w-full text-gray-700">
-                    <h3 class="text-lg font-medium text-gray-800">Command Lines & Code</h3>
-                    <pre class="bg-gray-100 p-4 rounded-xl border border-gray-200 overflow-x-auto text-sm font-mono text-gray-800"><code>${lecture.code}</code></pre>
-                  </div>
+                  ${
+                    lecture.notes
+                      ? `<div class="notes text-gray-700">
+                          <h3 class="text-lg font-medium text-gray-800">Notes</h3>
+                          <p>${lecture.notes}</p>
+                        </div>`
+                      : ""
+                  }
+                  ${
+                    lecture.code
+                      ? `<div class="code-block w-full text-gray-700">
+                          <h3 class="text-lg font-medium text-gray-800">Command Lines & Code</h3>
+                          <pre class="bg-gray-100 p-4 rounded-xl border border-gray-200 overflow-x-auto text-sm font-mono text-gray-800"><code>${lecture.code}</code></pre>
+                        </div>`
+                      : ""
+                  }
                   <div class="video-section text-gray-700">
                     <h3 class="text-lg font-medium text-gray-800">Lecture Recording</h3>
                     <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-md">
